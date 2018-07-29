@@ -1,0 +1,29 @@
+
+body {
+  font-family: 'Roboto', Sans-Serif;
+  font-size: 14px;
+  color: #333;
+  background-color: #f9f9f9;
+}
+input, button {
+  font-size: 1rem;
+}
+.playground {
+  font-family: 'Jockey One', Sans-Serif;
+}
+
+
+.draggable-box {
+  border: 2px dashed #888;
+  border-radius: 0.5em;
+  margin-top: 0.5em;
+  padding: 0.5em 1.5em;
+  font-size: 1.3em;
+}
+
+.draggable-box:hover {
+  cursor: move;
+  cursor: -webkit-grab;
+  background-color: #e7ee86;
+}
+
