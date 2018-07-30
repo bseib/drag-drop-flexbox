@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Drag, Drop, Flexbox</title>
+
+<link href="https://fonts.googleapis.com/css?family=Jockey+One|Roboto:400,400i,700,700i" rel="stylesheet">
+
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+
+<link rel="stylesheet" type="text/css" href="dragdropflex-3.css">
+
+
+</head>
+<body>
+
+  <div id="drag-drop-flex-app" >
+    <div class="container mt-4">
+
+      <div class="mt-4 card playground">
+        <div class="card-body">
+
+          <div class="sortable-list">
+            <div v-for="item in inventions" is="draggable-box" :item="item"></div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <script type="text/javascript" src="dragdropflex-3.js"></script>
+
+
+  <!-- templates -->
+  <div id="draggable-box-template" style="display:none;">
+    <div class="draggable-box" ref="domDraggableRef" draggable > <!-- :style="[flexOrder]" -->
+      <span v-text="item.name"></span>
+    </div>
+  </div>
+
+
+</body>
+</html>
