@@ -29,7 +29,7 @@ input, button {
   border-radius: 0.5em;
 }
 
-.draggable-box:hover {
+.draggable-box.is-draggable:hover {
   background-color: #e7ee86;
   cursor: move;
   cursor: -webkit-grab;

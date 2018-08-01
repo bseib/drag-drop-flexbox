@@ -10,7 +10,7 @@
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.min.js" integrity="sha256-VKITM616rVzV+MI3kZMNUDoY5uTsuSl1ZvEeZhNoJVk=" crossorigin="anonymous"></script>
 
-<link rel="stylesheet" type="text/css" href="dragdropflex-5.css">
+<link rel="stylesheet" type="text/css" href="runner-bystander-1.css">
 
 
 </head>
@@ -22,8 +22,13 @@
       <div class="mt-4 card playground">
         <div class="card-body">
 
-          <div class="sortable-list" id="draggableZone">
-            <div v-for="item in inventions" is="draggable-box" :item="item" :being-dragged-id="beingDraggedId"></div>
+          <div class="" id="draggableZone">
+            <div id="runner" class="draggable-box is-draggable" draggable="true">
+              <span>Runner</span>
+            </div>
+            <div id="bystander" class="draggable-box">
+              <span>Bystander</span>
+            </div>
           </div>
 
         </div>
@@ -32,17 +37,8 @@
     </div>
   </div>
 
-  <script type="text/javascript" src="dnd-factory.js"></script>
-  <script type="text/javascript" src="dragdropflex-5.js"></script>
+  <script type="text/javascript" src="runner-bystander-1.js"></script>
 
-
-
-  <!-- templates -->
-  <div id="draggable-box-template" style="display:none;">
-    <div class="draggable-box" ref="domDraggableRef" :class="{'mover': isBeingDragged}" draggable :style="[flexOrder]">
-      <span v-text="item.name"></span>
-    </div>
-  </div>
 
 
 </body>
