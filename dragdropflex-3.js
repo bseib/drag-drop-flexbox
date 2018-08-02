@@ -9,10 +9,6 @@
         return {
         }
       },
-      //mounted: function() {
-        // var el = this.$refs.domDraggableRef;
-        // $dnd.registerDraggableChild(el, this.item.dragId);
-      //},
       /*
       computed: {
       	flexOrder: function() {
@@ -23,7 +19,7 @@
       methods: {}
     });
     
-    let app = new Vue({
+    window.app = new Vue({
       el: '#drag-drop-flex-app',
       data: {
       	inventions: [
