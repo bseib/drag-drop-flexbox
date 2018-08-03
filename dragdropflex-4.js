@@ -26,9 +26,7 @@
     let app = new Vue({
       el: '#drag-drop-flex-app',
       data: {
-        dragId: null,
-        isDragzoneEnabled: false,
-        disableDragzoneCount: 0,
+        beingDraggedId: null,
       	inventions: [
       	  { id: 49, order: 0, name: 'Printing press' },
       	  { id: 93, order: 1, name: 'Lightbulb' },
@@ -48,40 +46,12 @@
       computed: {},
       methods: {
 
-        readDraggingOrderFromUI: function() {
-          let list = [];
-          _.forEach(_.sortBy(this.inventions, ['order']), function(invention) {
-            list.push(invention.id);
-          });
-          return list;
-        },
-
-        applyDraggingOrderToUI: function(list) {
-          console.log(list);
-          for (let i=0;i<list.length;i++) {
-            let dragId = list[i];
-            let invention = _.find(this.inventions, function(o) { return dragId == o.id; });
-            invention.order = i;
-          }
-        },
-
         init: function() {
           let self = this;
           $dnd.registerDragZone('draggableZone');
-          $dnd.registerDragIdListener(function(newDragId) { self.dragId = newDragId; });
-          $dnd.registerDragEnableChangeListener(function(isEnabled) { self.isDragzoneEnabled = isEnabled; });
-          $dnd.registerDragOrderReader(this.readDraggingOrderFromUI);
-          $dnd.registerDragOrderApplier(this.applyDraggingOrderToUI);
-          
-          $bus.$on('disableDragzone', function() {
-            self.disableDragzoneCount++;
-            $dnd.disableDragzone();
-          });
-          $bus.$on('enableDragzone', function() {
-            self.disableDragzoneCount--;
-            if ( 0 == self.disableDragzoneCount ) {
-              $dnd.enableDragzone();
-            }
+          $dnd.registerDragIdListener(function(newDragId) {
+            self.beingDraggedId = newDragId;
+            console.log("looks like " + newDragId + " is being dragged now");
           });
         },
 
