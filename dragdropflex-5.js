@@ -30,7 +30,6 @@
       el: '#drag-drop-flex-app',
       data: {
         beingDraggedId: null,
-        isDragzoneEnabled: false,
         disableDragzoneCount: 0,
       	inventions: [
       	  { id: 49, order: 0, name: 'Printing press' },
@@ -72,7 +71,6 @@
           let self = this;
           $dnd.registerDragZone('draggableZone');
           $dnd.registerDragIdListener(function(newDragId) { self.beingDraggedId = newDragId; });
-          $dnd.registerDragEnableChangeListener(function(isEnabled) { self.isDragzoneEnabled = isEnabled; });
           $dnd.registerDragOrderReader(this.readDraggingOrderFromUI);
           $dnd.registerDragOrderApplier(this.applyDraggingOrderToUI);
         },
