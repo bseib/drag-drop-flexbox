@@ -1,6 +1,8 @@
 # drag-drop-flexbox
 Demo of Drag and Drop used with Flexbox ordering
 
+<img src="drag-drop.gif">
+
 As drag events are fired, this Vue app dynamically updates a list of integers, which is used to assign a `style="order: n"` attribute to set the flexbox item order, making the list reorder dynamically as items are dragged.
 
 See complete [demo](https://bseib.github.io/drag-drop-flexbox/dragdropflex-5.html).
